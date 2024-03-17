@@ -47,7 +47,7 @@ def hello_world():
     def scrape_data(links: List[str], terms: List[str], headers: Dict[str, str], session: Session) -> List[str]:
         results = []
         r_dict = {'link': [], 'title': [], 'desc': []}
-        with ThreadPoolExecutor(max_workers=1) as executor:
+        with ThreadPoolExecutor(max_workers=5) as executor:
             executor_results = [executor.submit(scrape_url, link, headers, session) for link in links]
             for f in as_completed(executor_results):
                 html = f.result()
