@@ -21,6 +21,7 @@ app = Flask(__name__)
 
 @app.get('/health_check')
 def health_check():
+    print('service is up and running!')
     return jsonify({'status': 'service is up and running!'}), 200
 @app.route('/')
 def scraper():
