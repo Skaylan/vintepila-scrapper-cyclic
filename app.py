@@ -19,7 +19,7 @@ load_dotenv()
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
+def scraper():
     URL = 'https://www.vintepila.com.br/trabalhos-freelance/'
     HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36'}
 
