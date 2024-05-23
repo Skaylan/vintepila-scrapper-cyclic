@@ -18,6 +18,10 @@ load_dotenv()
 
 app = Flask(__name__)
 
+
+@app.get('/health_check')
+def health_check():
+    return jsonify({'status': 'service is up and running!'}), 200
 @app.route('/')
 def scraper():
     URL = 'https://www.vintepila.com.br/trabalhos-freelance/'
